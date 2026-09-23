@@ -6,7 +6,7 @@ public abstract class PrintJob implements Chargeable {
 
     public PrintJob(String id, int pages) {
         if (pages <= 0) {
-            throw new IllegalArgumentException("pages must be positive");
+            throw new IllegalArgumentException("pages must be a positive number");
         }
 
         this.id = id;
@@ -26,7 +26,7 @@ public abstract class PrintJob implements Chargeable {
 
     public int calculateCharge(int copies) {
         if (copies <= 0) {
-            throw new IllegalArgumentException("copies must be positive");
+            throw new IllegalArgumentException("copies must be a positive number");
         }
         return calculateCharge() * copies;
     }
